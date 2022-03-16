@@ -10,11 +10,11 @@ public class Zad7 {
             int n=sc.nextInt();
             if(n>=5){
                 if(n%2!=0){
-                    for(i=1;i<=5;i++)
+                    for(i=1;i<=n;i++)
                     {
-                        for(j=1;j<=5;j++)
+                        for(j=1;j<=n;j++)
                         {
-                            if(j==1||j==5||i==j)
+                            if(j==1||j==n||i==j)
                             {
                                 System.out.print("*");
                             }
