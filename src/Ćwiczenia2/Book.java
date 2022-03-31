@@ -53,11 +53,11 @@ public class Book {
     }
 
     public int getBorrowCount() {
-        return BorrowCount;
+        return borrowCount;
     }
 
     public void setBorrowCount(int borrowCount) {
-        BorrowCount = borrowCount;
+        borrowCount = borrowCount;
     }
 
     public boolean isAvailable() {
