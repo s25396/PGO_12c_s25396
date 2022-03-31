@@ -8,8 +8,9 @@ public class Book {
     private Genre genre;
     private Lang lang;
     private LocalDate publishDate;
-    private int BorrowCount;
+    private int borrowCount;
     private boolean isAvailable;
+
 
     public long getID() {
         return ID;
