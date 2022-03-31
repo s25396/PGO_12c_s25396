@@ -1,5 +1,5 @@
 package Ćwiczenia2;
-
+import Ćwiczenia2.*;
 import java.time.LocalDate;
 
 public class Person {
@@ -7,6 +7,17 @@ public class Person {
     private String surname;
     private LocalDate dateOfBirth;
 
+
+    public Person(String name, String surname, LocalDate dateOfBirth) {
+        setName(name);
+        setSurname(surname);
+        setDateOfBirth(dateOfBirth);
+    }
+
+    public void Publishbook() {
+        Book i= new Book();
+
+    }
     public String getName() {
         return name;
     }
