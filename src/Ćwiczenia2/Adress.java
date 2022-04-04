@@ -15,8 +15,6 @@ public class Adress {
         setFlat(flat);
 
     }
-
-
     public String getCountry() {
         return country;
     }
