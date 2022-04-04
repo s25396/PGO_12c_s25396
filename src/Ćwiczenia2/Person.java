@@ -99,7 +99,6 @@ public class Person {
             System.out.println("-"+l);
         }
         String lang = in.next();
-        System.out.println("Choose language of your book");
         this.book= new Book(name,Genre.valueOf(genretype),Lang.valueOf(lang),LocalDate.now());
         book.setAuthor(this);
         System.out.println("Your published book:");
