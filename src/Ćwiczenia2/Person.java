@@ -1,7 +1,5 @@
 package Ćwiczenia2;
 import Ćwiczenia2.*;
-
-import javax.management.ObjectInstance;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Scanner;
