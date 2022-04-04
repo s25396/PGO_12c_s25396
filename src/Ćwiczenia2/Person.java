@@ -12,9 +12,6 @@ public class Person {
     private LocalDate dateOfBirth;
     private Adress adress;
     private Book book;
-    private Lang lang;
-    private Genre genre;
-    private LocalDate publishDate;
 
 
     public Person(String name, String surname, LocalDate dateOfBirth, Adress adress) {
@@ -86,23 +83,31 @@ public class Person {
         this.book = book;
     }
 
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    public void setLang(Lang lang) {
-        this.lang = lang;
-    }
-
-    public Lang getLang() {
-        return lang;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
     public void PublishBook(){
-
+        Scanner in= new Scanner(System.in);
+        System.out.println("Set name of your book");
+        String name=in.next();
+        System.out.println("Choose genre of your book: ");
+        for(Genre g: Genre.values())
+        {
+            System.out.println("-" + g);
+        }
+        String genretype = in.next();
+        System.out.println("Choose language of your book: ");
+        for(Lang l: Lang.values())
+        {
+            System.out.println("-"+l);
+        }
+        String lang = in.next();
+        System.out.println("Choose language of your book");
+        this.book= new Book(name,Genre.valueOf(genretype),Lang.valueOf(lang),LocalDate.now());
+        book.setAuthor(this);
+        System.out.println("Your published book:");
+        System.out.println("Author: "+book.getAuthor().getName()+" "+book.getAuthor().getSurname());
+        System.out.println("Name: "+book.getName());
+        System.out.println("Genre: "+book.getGenre());
+        System.out.println("Language: "+book.getLang());
+        System.out.println("Published date: "+book.getPublishDate());
     }
+
 }

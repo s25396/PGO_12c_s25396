@@ -16,7 +16,7 @@ public class Book {
     private boolean isAvailable=true;
     private Person author;
     private static Map<Book,Person>personwithloan = new HashMap<>();
-    private static Set<Book> borrowedbooks= new HashSet<>();
+    private static Set<Book> books= new HashSet<>();
 
 
 
@@ -25,7 +25,7 @@ public class Book {
         setGenre(genre);
         setLang(lang);
         setPublishDate(publishDate);
-        borrowedbooks.add(this);
+        books.add(this);
 
     }
 
@@ -100,6 +100,10 @@ public class Book {
 
     public void setAuthor(Person author) {
         this.author = author;
+    }
+
+    public static Set<Book> getbooks() {
+        return Collections.unmodifiableSet(books);
     }
 
     public void BorrowBook(Person x){
