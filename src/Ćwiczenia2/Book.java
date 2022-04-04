@@ -20,12 +20,13 @@ public class Book {
 
 
 
-    public Book(String name, Genre genre, Lang lang, LocalDate publishDate) {
+    public Book(String name, Genre genre, Lang lang, LocalDate publishDate, Person author) {
         setName(name);
         setGenre(genre);
         setLang(lang);
         setPublishDate(publishDate);
         books.add(this);
+        this.author=author;
     }
 
     public long getID() {
@@ -99,6 +100,10 @@ public class Book {
     }
 
     public void setAuthor(Person author) {
+        if(author==null)
+        {
+            throw new RuntimeException("Every book has an author");
+        }
         this.author = author;
     }
 

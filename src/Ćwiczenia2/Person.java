@@ -97,8 +97,7 @@ public class Person {
             System.out.println("-"+l);
         }
         String lang = in.next();
-        this.book= new Book(name,Genre.valueOf(genretype),Lang.valueOf(lang),LocalDate.now());
-        book.setAuthor(this);
+        this.book= new Book(name,Genre.valueOf(genretype),Lang.valueOf(lang),LocalDate.now(),this);
         System.out.println("Your published book:");
         System.out.println("Author: "+book.getAuthor().getName()+" "+book.getAuthor().getSurname());
         System.out.println("Name: "+book.getName());
