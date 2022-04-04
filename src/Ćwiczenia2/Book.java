@@ -26,7 +26,6 @@ public class Book {
         setLang(lang);
         setPublishDate(publishDate);
         books.add(this);
-
     }
 
     public long getID() {
