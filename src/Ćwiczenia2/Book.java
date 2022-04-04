@@ -75,7 +75,8 @@ public class Book {
     }
 
     public void setPublishDate(LocalDate publishDate) {
-        if(publishDate==null){
+        if(publishDate==null)
+        {
             throw new RuntimeException("Book must have publish date");
         }
         this.publishDate = publishDate;
