@@ -6,6 +6,6 @@ public enum Genre {
     Comics,
     Detective,
     Fantasy,
-    Fiction;
+    Fiction,
 
 }
