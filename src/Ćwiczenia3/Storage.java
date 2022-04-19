@@ -3,24 +3,28 @@ import java.util.*;
 public class Storage {
     private int deliveryTime;
     private Products product;
-    public static List<Products> storedProducts=new ArrayList<>();
+    private List<Products> storedProducts=new ArrayList<>();
 
 
-    public Storage(int deliveryTime) {
-        this.deliveryTime = deliveryTime;
+    public Storage(int deliveryTime,ArrayList<Products> storedProducts) {
+        setDeliveryTime(deliveryTime);
+        setStoredProducts(storedProducts);
     }
 
-    public int getDeliveryTime(Products x) {
-        if(storedProducts.contains(x)){
-            deliveryTime=10;
-        }
-        else {
-            deliveryTime=0;
-        }
+    public int getDeliveryTime() {
         return deliveryTime;
     }
 
     public void setDeliveryTime(int deliveryTime) {
         this.deliveryTime = deliveryTime;
     }
+
+    public List<Products> getStoredProducts() {
+        return storedProducts;
+    }
+
+    public void setStoredProducts(List<Products> storedProducts) {
+        this.storedProducts = storedProducts;
+    }
 }
+

@@ -28,9 +28,12 @@ public class ShoppingCart {
     public double getTotalDeliveryTime() {
         for(Products prodFromList: shoplist){
             if (prodFromList.isAvailable()==false){
-                if(Storage.storedProducts.contains(prodFromList)){
-                    totalDeliveryTime= totalDeliveryTime + 10;
+                if(prodFromList.getStorage().getStoredProducts().contains(prodFromList)){
+                    totalDeliveryTime= totalDeliveryTime + prodFromList.getStorage().getDeliveryTime();
                 }
+            }
+            else if(prodFromList.isAvailable()==true){
+                totalDeliveryTime= totalDeliveryTime+0;
             }
 
         }

@@ -1,21 +1,23 @@
 package Ćwiczenia3;
 
 import java.util.ArrayList;
+import Ćwiczenia3.*;
 
 public class Products {
     private String name;
     private ProductType productType;
     private double price;
-    private int quantity;
+    private int quantity = 0;
     private boolean isAvailable;
-    public static ArrayList<Products>allProducts= new ArrayList<>();
+    private Storage storage;
 
-    public Products(String name, ProductType productType, double price, int quantity) {
+
+    public Products(String name, ProductType productType, double price, int quantity, Storage storage) {
         setName(name);
         setProductType(productType);
         setPrice(price);
-        allProducts.add(this);
         setQuantity(quantity);
+        setStorage(storage);
     }
 
     public String getName() {
@@ -62,6 +64,14 @@ public class Products {
         this.quantity = quantity;
     }
 
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+
     public boolean isAvailable() {
         if(quantity>0){
             isAvailable=true;
@@ -71,14 +81,16 @@ public class Products {
         }
         return isAvailable;
     }
+
     public void sell(){
         quantity--;
 
     }
+
     public void increaseQuantity(int x){
-        quantity= quantity+x;
-        for(int i=0;i<x-1;i++){
-        Storage.storedProducts.remove(this);}
+        quantity = quantity+x;
+        for(int i=0;i==x-1;i++){
+        storage.getStoredProducts().remove(this);}
 
     }
 }
