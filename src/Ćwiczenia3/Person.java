@@ -1,5 +1,6 @@
 package Ćwiczenia3;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Person {
@@ -7,7 +8,8 @@ public class Person {
     private String surname;
     private double moneyInCash;
     private double moneyOnCard;
-    private List<ShoppingCart>purchaseHist;
+    private List<ShoppingCart>purchaseHist = new ArrayList<>();
+    private ShoppingCart current;
 
 
     public Person(String name, String surname, double moneyInCash, double moneyOnCard) {
@@ -65,9 +67,34 @@ public class Person {
         return purchaseHist;
     }
 
-    public void makeOrder(){
-            ArrayList<Products> shoplist= new ArrayList<>();
-            ShoppingCart my=new ShoppingCart(shoplist);
-            purchaseHist.add(my);
+    public void makeOrder(ArrayList<Products> x){
+            current=new ShoppingCart(x);
+        System.out.println("Now you must pay to finalized the order");
+    }
+
+    public void buyByCard(){
+        if(moneyOnCard>=current.getTotalPrice())
+        {
+            current.sell();
+            System.out.println("Your purchases have been successfully paid");
+            purchaseHist.add(current);
         }
+        else
+        {
+            System.out.println("You do not have enough money on your card");
+        }
+    }
+    public void buyInCash(){
+        if(moneyInCash>=current.getTotalPrice())
+        {
+            current.sell();
+            System.out.println("Your purchases have been successfully paid");
+            purchaseHist.add(current);
+        }
+        else
+        {
+            System.out.println("You do not have enough money");
+        }
+
+    }
 }
