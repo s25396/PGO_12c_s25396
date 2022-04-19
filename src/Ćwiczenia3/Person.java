@@ -85,6 +85,7 @@ public class Person {
             throw new RuntimeException("You do not have enough money on your card");
         }
     }
+
     public void buyInCash(){
         if(moneyInCash>=current.getTotalPrice())
         {
