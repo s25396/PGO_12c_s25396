@@ -17,8 +17,9 @@ public class ShoppingCart {
     }
 
     public double getTotalPrice() {
+        totalPrice =0;
         for(int i=0;i<shoplist.size();i++){
-            totalPrice=+shoplist.get(i).getPrice();}
+            totalPrice= totalPrice+shoplist.get(i).getPrice();}
 
         return totalPrice;
     }
@@ -47,7 +48,7 @@ public class ShoppingCart {
         for(Products o: shoplist){
             System.out.println(o.getName()+" - "+o.getPrice());
         }
-        System.out.println(totalPrice);
+        System.out.println("Totalprice - "+totalPrice);
 
     }
 }

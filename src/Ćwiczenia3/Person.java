@@ -68,14 +68,15 @@ public class Person {
     }
 
     public void makeOrder(ArrayList<Products> x){
-            current=new ShoppingCart(x);
-        System.out.println("Now you must pay to finalized the order");
+             current=new ShoppingCart(x);
+        System.out.println("Now you must pay to finalized the order 'current' ");
     }
 
     public void buyByCard(){
         if(moneyOnCard>=current.getTotalPrice())
         {
             current.sell();
+            moneyOnCard= moneyOnCard-current.getTotalPrice();
             System.out.println("Your purchases have been successfully paid");
             purchaseHist.add(current);
         }
@@ -88,6 +89,7 @@ public class Person {
         if(moneyInCash>=current.getTotalPrice())
         {
             current.sell();
+            moneyInCash= moneyInCash-current.getTotalPrice();
             System.out.println("Your purchases have been successfully paid");
             purchaseHist.add(current);
         }
