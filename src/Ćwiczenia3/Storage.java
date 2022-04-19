@@ -2,7 +2,6 @@ package Ćwiczenia3;
 import java.util.*;
 public class Storage {
     private int deliveryTime;
-    private Products product;
     private List<Products> storedProducts=new ArrayList<>();
 
 
