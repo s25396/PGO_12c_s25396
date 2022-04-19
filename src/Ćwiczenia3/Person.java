@@ -69,7 +69,7 @@ public class Person {
 
     public void makeOrder(ArrayList<Products> x){
              current=new ShoppingCart(x);
-        System.out.println("Now you must pay to finalized the order 'current' ");
+        System.out.println("Now you must pay to finalized the order");
     }
 
     public void buyByCard(){
@@ -82,7 +82,7 @@ public class Person {
         }
         else
         {
-            System.out.println("You do not have enough money on your card");
+            throw new RuntimeException("You do not have enough money on your card");
         }
     }
     public void buyInCash(){
@@ -95,7 +95,7 @@ public class Person {
         }
         else
         {
-            System.out.println("You do not have enough money");
+            throw new RuntimeException("You do not have enough money");
         }
 
     }
