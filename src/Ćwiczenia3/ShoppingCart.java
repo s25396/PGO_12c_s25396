@@ -26,6 +26,16 @@ public class ShoppingCart {
 
 
     public double getTotalDeliveryTime() {
+        for(Products prodFromList: shoplist){
+            if (prodFromList.isAvailable()==false){
+                if(Storage.storedProducts.contains(prodFromList)){
+                    totalDeliveryTime= totalDeliveryTime + 10;
+                }
+            }
+
+        }
+
+
         return totalDeliveryTime;
     }
 

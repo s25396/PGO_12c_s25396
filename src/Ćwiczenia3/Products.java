@@ -8,13 +8,14 @@ public class Products {
     private double price;
     private int quantity;
     private boolean isAvailable;
-    public static ArrayList<Products>allproduc= new ArrayList<>();
+    public static ArrayList<Products>allProducts= new ArrayList<>();
 
-    public Products(String name, ProductType productType, double price) {
+    public Products(String name, ProductType productType, double price, int quantity) {
         setName(name);
         setProductType(productType);
         setPrice(price);
-        allproduc.add(this);
+        allProducts.add(this);
+        setQuantity(quantity);
     }
 
     public String getName() {
@@ -76,6 +77,8 @@ public class Products {
     }
     public void increaseQuantity(int x){
         quantity= quantity+x;
+        for(int i=0;i<x-1;i++){
+        Storage.storedProducts.remove(this);}
 
     }
 }
