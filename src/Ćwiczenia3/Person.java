@@ -63,7 +63,6 @@ public class Person {
     }
 
     public List<ShoppingCart> getPurchaseHist() {
-
         return purchaseHist;
     }
 
@@ -100,4 +99,5 @@ public class Person {
         }
 
     }
+
 }
