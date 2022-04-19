@@ -44,7 +44,7 @@ public class ShoppingCart {
         }
     }
 
-    public void showmycart(){
+    public void showMyCart(){
         for(Products o: shoplist){
             System.out.println(o.getName()+" - "+o.getPrice());
         }

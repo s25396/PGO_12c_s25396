@@ -74,8 +74,8 @@ public class Products {
         quantity--;
 
     }
-    public void increaseQuantity(){
-        quantity++;
+    public void increaseQuantity(int x){
+        quantity= quantity+x;
 
     }
 }
