@@ -8,7 +8,6 @@ public class ShoppingCart {
     final private int id = hashCode();
     private double totalPrice;
     private double totalDeliveryTime=0;
-    private Products product;
     private ArrayList<Products> shoplist = new ArrayList<>();
 
 

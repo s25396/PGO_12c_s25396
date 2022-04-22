@@ -61,6 +61,9 @@ public class Products {
     }
 
     public void setQuantity(int quantity) {
+        if(quantity<0){
+            throw new RuntimeException("Quantity cannot be negative");
+        }
         this.quantity = quantity;
     }
 
@@ -73,7 +76,7 @@ public class Products {
     }
 
     public boolean isAvailable() {
-        if(quantity>0){
+        if(quantity>0 || storage.getStoredProducts().contains(this)){
             isAvailable=true;
         }
         else{
@@ -83,14 +86,35 @@ public class Products {
     }
 
     public void sell(){
-        quantity--;
+        if(quantity>0){
+        quantity--;}
+        else if(quantity==0 && storage.getStoredProducts().contains(this)){
+            increaseQuantity(1);
+            quantity--;
+        }
+        else{
+            throw new RuntimeException("this product is no longer available");
+        }
 
     }
 
     public void increaseQuantity(int x){
-        quantity = quantity+x;
-        for(int i=0;i==x-1;i++){
-        storage.getStoredProducts().remove(this);}
-
+        int m=0;
+        for (Products fromstorage: storage.getStoredProducts()){
+            if(fromstorage==this) {
+                m++;
+            }
+            else {
+                m=m;
+            }
+        }
+        if(m>=x){
+            quantity = quantity+x;
+            for(int i=0;i==x-1;i++){
+                storage.getStoredProducts().remove(this);}
+        }
+        else{
+            throw new RuntimeException("This product is out of stock");
+        }
     }
 }
