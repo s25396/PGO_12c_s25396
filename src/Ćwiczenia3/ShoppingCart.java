@@ -30,7 +30,7 @@ public class ShoppingCart {
             {
                     totalDeliveryTime= totalDeliveryTime;
             }
-            else if(prodFromList.isAvailable())
+            else if(prodFromList.getQuantity()==0 && prodFromList.isAvailable())
             {
                 totalDeliveryTime= totalDeliveryTime + prodFromList.getStorage().getDeliveryTime();
             }
