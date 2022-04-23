@@ -15,6 +15,9 @@ public class Storage {
     }
 
     public void setDeliveryTime(int deliveryTime) {
+        if(deliveryTime<0){
+            throw new RuntimeException("Delivery time cannot be negative");
+        }
         this.deliveryTime = deliveryTime;
     }
 
