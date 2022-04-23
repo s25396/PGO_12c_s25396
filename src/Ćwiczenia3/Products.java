@@ -114,7 +114,7 @@ public class Products {
                 storage.getStoredProducts().remove(this);}
         }
         else{
-            throw new RuntimeException("This product is out of stock");
+            throw new RuntimeException("There are/is only "+x+" left");
         }
     }
 }
