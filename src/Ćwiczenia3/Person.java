@@ -71,9 +71,6 @@ public class Person {
     }
 
     public void addToMyCurrentCart(Products x){
-        if(!x.isAvailable()){
-            throw new RuntimeException(x.getName()+" is no longer available");
-        }
         current.addToMyCart(x);
     }
 
