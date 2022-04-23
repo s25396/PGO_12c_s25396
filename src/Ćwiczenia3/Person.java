@@ -70,6 +70,10 @@ public class Person {
         System.out.println("Now you must pay to finalized the order");
     }
 
+    public void addToMyCurrentCart(Products x){
+        current.addToMyCart(x);
+    }
+
     public void buyByCard(){
         if(moneyOnCard>=current.getTotalPrice())
         {

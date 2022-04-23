@@ -25,5 +25,9 @@ public class Storage {
     public void setStoredProducts(List<Products> storedProducts) {
         this.storedProducts = storedProducts;
     }
+
+    public void addToStorage(Products x){
+        storedProducts.add(x);
+    }
 }
 
