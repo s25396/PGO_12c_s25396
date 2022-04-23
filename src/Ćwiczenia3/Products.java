@@ -114,7 +114,7 @@ public class Products {
                 storage.getStoredProducts().remove(this);}
         }
         else{
-            throw new RuntimeException("There are/is only "+x+" left");
+            throw new RuntimeException("There are/is only "+m+" left");
         }
     }
 }
