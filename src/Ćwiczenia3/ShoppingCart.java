@@ -57,6 +57,9 @@ public class ShoppingCart {
     }
 
     public void addToMyCart (Products x){
+        if(!x.isAvailable()){
+            throw new RuntimeException(x.getName()+" is no longer available");
+        }
         shoplist.add(x);
     }
 
