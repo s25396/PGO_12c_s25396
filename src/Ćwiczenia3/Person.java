@@ -31,14 +31,14 @@ public class Person {
     }
 
     public String getSurname() {
-        if(surname==null || surname.isEmpty())
-    {
-        throw new RuntimeException("Surname cannot be empty.");
-    }
         return surname;
     }
 
     public void setSurname(String surname) {
+        if(surname==null || surname.isEmpty())
+        {
+            throw new RuntimeException("Surname cannot be empty.");
+        }
         this.surname = surname;
     }
 

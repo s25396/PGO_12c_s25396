@@ -23,14 +23,13 @@ public class ShoppingCart {
         return totalPrice;
     }
 
-
     public double getTotalDeliveryTime() {
         for(Products prodFromList: shoplist){
             if (prodFromList.getQuantity()>0)
             {
                     totalDeliveryTime= totalDeliveryTime;
             }
-            else if(prodFromList.getQuantity()==0 && prodFromList.isAvailable())
+            else
             {
                 totalDeliveryTime= totalDeliveryTime + prodFromList.getStorage().getDeliveryTime();
             }
@@ -38,12 +37,16 @@ public class ShoppingCart {
         return totalDeliveryTime;
     }
 
-
     public int getId() {
         return id;
     }
 
     public void setShoplist(ArrayList<Products> shoplist) {
+        for(Products prodFromList: shoplist){
+            if(!prodFromList.isAvailable()){
+                throw new RuntimeException(prodFromList.getName()+" is out of stock");
+            }
+        }
         this.shoplist = shoplist;
     }
 
