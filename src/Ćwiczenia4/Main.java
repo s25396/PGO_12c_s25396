@@ -56,7 +56,9 @@ public class Main {
         System.out.println("Matrix E:");
         matrixE.print();
         System.out.println("Matrix D * Matrix E: ");
-        Matrix.multiplying(matrixD,matrixE).print();
+        Matrix.multiply(matrixD,matrixE).print();
+
+        ///will throw an exception -->Matrix.multiply(matrixA, matrixD);
 
 
     }}
