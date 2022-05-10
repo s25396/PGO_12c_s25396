@@ -123,7 +123,7 @@ public class Matrix {
     public static Matrix multiply(Matrix m, Matrix m2){
         Matrix multiplied;
         if(m.getGeneralMatrix()[0].length!=m2.getGeneralMatrix().length){
-            throw new RuntimeException(" You cannot multiply Matrixes in which number of rows of first matrix is not equal to number of columns of the second one!");
+            throw new RuntimeException(" You cannot multiply Matrixes in which number of columns of first matrix is not equal to number of rows of the second one!");
         }
         else{
             int [][] cc= new int[m.getGeneralMatrix().length][m2.getGeneralMatrix()[0].length];
