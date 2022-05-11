@@ -65,7 +65,7 @@ public class Matrix {
     }
 
     public Matrix add(Matrix m) {
-        if(this.generalMatrix.length!=m.getGeneralMatrix().length){
+        if(this.generalMatrix.length!=m.getGeneralMatrix().length || this.generalMatrix[0].length!=m.getGeneralMatrix()[0].length){
             throw new RuntimeException("Matrixes have different size!");
         }
         else{
@@ -80,7 +80,7 @@ public class Matrix {
     public static Matrix add(Matrix m, Matrix m2) {
         int cc[][]=new int[m.getGeneralMatrix().length][m2.getGeneralMatrix().length];
         Matrix c= new Matrix(cc);
-        if(m.generalMatrix.length!=m2.getGeneralMatrix().length){
+        if(m.generalMatrix.length!=m2.getGeneralMatrix().length || m.generalMatrix[0].length!=m2.getGeneralMatrix()[0].length){
             throw new RuntimeException("Matrixes have different size!");
         }
         else{
@@ -93,7 +93,7 @@ public class Matrix {
     }
 
     public Matrix subtract(Matrix m) {
-        if(this.generalMatrix.length!=m.getGeneralMatrix().length){
+        if(this.generalMatrix.length!=m.getGeneralMatrix().length || this.generalMatrix[0].length!=m.getGeneralMatrix()[0].length){
             throw new RuntimeException("Matrixes have different size!");
         }
         else{
@@ -108,7 +108,7 @@ public class Matrix {
     public static Matrix subtract(Matrix m, Matrix m2) {
         int cc[][]=new int[m.getGeneralMatrix().length][m2.getGeneralMatrix().length];
         Matrix c= new Matrix(cc);
-        if(m.generalMatrix.length!=m2.getGeneralMatrix().length){
+        if(m.generalMatrix.length!=m2.getGeneralMatrix().length || m.generalMatrix[0].length!=m2.getGeneralMatrix()[0].length){
             throw new RuntimeException("Matrixes have different size!");
         }
         else{
