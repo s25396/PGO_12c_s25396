@@ -23,6 +23,6 @@ class Alcohol extends Liquid{
 
     @Override
     public int getReagent() {
-        return super.getReagent()/percent;
+        return percent;
     }
 }

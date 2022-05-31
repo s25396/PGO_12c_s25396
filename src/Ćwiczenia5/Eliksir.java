@@ -39,11 +39,6 @@ public class Eliksir {
         }
         else
         {
-            if(x instanceof Liquid)
-            {
-                x=catalyst;
-                ingredients.add(x);
-            }
             ingredients.add(x);
         }
 
@@ -61,31 +56,49 @@ public class Eliksir {
     }
 
     public int getPower() {
+        if(!isCreated)
+        {
+            throw new RuntimeException("There is no Eliksir created");
+        }
+        else {
+            return power;
+        }
+    }
+
+    public Liquid getCatalyst() {
+        if(catalyst==null)
+        {
+            System.out.println("You haven't add any catalyst yet.");
+        }
+        return catalyst;
+    }
+
+    public void addCatalyst(Liquid catalyst) {
         if(isCreated)
         {
-            throw new RuntimeException("Eliksir has already been created");
+            throw new RuntimeException("Eliksir has been already made");
         }
-        else
-        {
-         for(Ingredient x:ingredients)
-         {
-             if(x instanceof Minerals){
-                 power =  ((Minerals) x).getPower() + power;
-                 return power;
-             }
-             else
-             {
-                 return power;
-             }
-
-         }
-         power = power/catalyst.getReagent();
-        }
-
-        return power;
+        this.catalyst = catalyst;
     }
 
     public void create(){
-        isCreated=true;
-    }
+        if(ingredients.isEmpty())
+        {
+            throw new RuntimeException("There is no ingredient!");
+        }
+        else
+        {
+            if(catalyst==null)
+            {
+            throw new RuntimeException("You have to add Catalyst to make the Eliksir!");
+            }
+            else
+            {
+                isCreated = true;
+                for (Ingredient x : ingredients) {
+                    power +=x.getReagent();
+                }
+                power = power / catalyst.getReagent();
+            }
+        }}
 }

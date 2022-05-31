@@ -21,12 +21,11 @@ class Ore extends Minerals{
     public int getReagent() {
         if(metallic)
         {
-            setBaseReagent(super.getReagent());
+            return super.getReagent();
         }
         else
         {
-            setBaseReagent(super.getReagent()/2);
+            return super.getReagent()/2;
         }
-        return getReagent();
     }
 }

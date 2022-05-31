@@ -24,7 +24,7 @@ class Minerals extends Ingredient {
 
     @Override
     public int getReagent() {
-        setBaseReagent(super.getReagent()-power);
-        return getReagent();
+        
+        return super.getReagent()+power;
     }
 }
