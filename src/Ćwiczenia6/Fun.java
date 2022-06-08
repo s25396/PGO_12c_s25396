@@ -19,4 +19,5 @@ public interface Fun {
             wyniki.add(wynik);
         }
         double min = Collections.min(wyniki);
-        return min;}}
+        return min;}
+}

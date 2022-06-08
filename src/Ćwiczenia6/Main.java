@@ -30,7 +30,7 @@ public class Main {
             @Override
             public double f(double x)
             {                           /* Żeby użyć interfejsu bez klasy, która go implementuje
-                                        Możemy użyć przeciążenia jego metody przy deklarowaniu interfejsu Fun. */
+                                        Możemy użyć przeciążenia jego metody przy inicjalzacji interfejsu Fun. */
                 double y = x*4 + 3;
                 return y;
             }
