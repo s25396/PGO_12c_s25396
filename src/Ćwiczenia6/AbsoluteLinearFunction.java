@@ -19,18 +19,6 @@ public class AbsoluteLinearFunction extends LinearFunction implements  Fun{
     }
 
     @Override
-    void increaseCoefficientsBy(double delta) {
-        setA(Math.abs(getA()+delta));
-        setB(Math.abs(getB()+delta));
-    }
-
-    @Override
-    void decreaseCoefficientsBy(double delta) {
-        setA(Math.abs(getA()-delta));
-        setB(Math.abs(getB()-delta));
-    }
-
-    @Override
     public double f(double x) {
         return super.f(Math.abs(x));
     }
