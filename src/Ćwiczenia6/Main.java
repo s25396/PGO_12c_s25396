@@ -1,5 +1,6 @@
 package Ćwiczenia6;
 
+import java.sql.SQLOutput;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 public class Main {
     private static final DecimalFormat df = new DecimalFormat("0.0");
     public static void main(String[] args) {
+        AbsoluteLinearFunction dada = new AbsoluteLinearFunction(-4,4);
         List<Function> functions = new ArrayList<>();
         functions.add(new LinearFunction(2,4));
         functions.add(new SquareFunction(2,0,-2.5));
