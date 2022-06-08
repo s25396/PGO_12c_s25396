@@ -10,7 +10,6 @@ public class AbsoluteLinearFunction extends LinearFunction implements  Fun{
     @Override
     public double f(double x) {
         double y = Math.abs(getA()*x+getB());
-
         return y;
     }
 }

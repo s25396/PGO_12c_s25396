@@ -33,13 +33,13 @@ public class LinearFunction extends Function implements Fun{
 
     @Override
      void increaseCoefficientsBy(double delta) {
-        a = a+delta;
-        b = b+delta;
+        a += delta;
+        b += delta;
     }
 
     @Override
     void decreaseCoefficientsBy(double delta) {
-        a = a-delta;
-        b = b-delta;
+        a -= delta;
+        b -= delta;
     }
 }

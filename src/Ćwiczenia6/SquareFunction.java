@@ -37,16 +37,16 @@ public class SquareFunction extends Function implements Fun{
 
     @Override
     void increaseCoefficientsBy(double delta) {
-        a = a+delta;
-        b = b+delta;
-        c = c+delta;
+        a += delta;
+        b += delta;
+        c += delta;
     }
 
     @Override
     void decreaseCoefficientsBy(double delta) {
-        a = a-delta;
-        b = b-delta;
-        c = c-delta;
+        a -=delta;
+        b -=delta;
+        c -=delta;
     }
 
     @Override
