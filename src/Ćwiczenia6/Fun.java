@@ -6,7 +6,7 @@ import java.util.Collections;
 public interface Fun {
     double f(double x);
     static double minimum(Fun func, double a, double b, double alpha) {
-        if(a>b)
+        if(a>=b)
         {
             throw new RuntimeException("a have to be lower than b!");
         }
